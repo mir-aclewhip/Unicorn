@@ -16,6 +16,11 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
     @IBOutlet weak var tableView:UITableView!
     @IBOutlet weak var titleLabel:UILabel!
 
+    
+    @IBOutlet var currentLocationLabel: UILabel!
+    @IBOutlet var locationUpgradeLabel: UILabel!
+    @IBOutlet var locationCostLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
@@ -26,6 +31,9 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
         self.tableView.reloadData()
         let currNumEmployees = Employees.count
         titleLabel.text = "Employees \(currNumEmployees)/\(totalNumEmployees)"
+        currentLocationLabel.text = "Current : Mom's Basement"
+        locationUpgradeLabel.text = "Upgrade : Small Office"
+        locationCostLabel.text = "Cost : $1/sec"
     }
 
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {

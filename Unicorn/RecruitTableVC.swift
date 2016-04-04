@@ -34,7 +34,7 @@ class RecruitTableVC: UITableViewController {
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCellWithIdentifier("Employee") as? RecruitTableViewCell {
-            cell.configureCell()
+            cell.configureCell(indexPath.row)
             
             cell.button.tag = indexPath.row
             let tapGesture = UITapGestureRecognizer(target: self, action: Selector("handleDeleteTap:"))

@@ -17,10 +17,10 @@ class EmployeesTableViewCell: UITableViewCell {
     @IBOutlet var profitLabel:UILabel!
     
     var profit:Int!
-
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
     }
 
     func configureCell(employee:Employee) {

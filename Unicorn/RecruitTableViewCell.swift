@@ -17,28 +17,32 @@ class RecruitTableViewCell: UITableViewCell {
     @IBOutlet var button:UIButton!
     @IBOutlet var profitLabel:UILabel!
     
-    
+    var possibleEmployees:[Employee] = []
+    var totalEmployees:Int = 5
     var currentEmployee:Employee!
     var profit:Double!
 
     override func awakeFromNib() {
         super.awakeFromNib()
         button.layer.cornerRadius = 5.0
+        for _ in 1...totalEmployees {
+            let employee = Employee()
+            possibleEmployees.append(employee)
+        }
     }
 
 
-    func configureCell() {
-        let employee = Employee()
-        currentEmployee = employee
-        nameLabel.text = employee.name
-        efficiencyColorChange(employee.efficiency)
-        efficiencyLabel.text = "Efficiency: \(employee.efficiency*100)% "
+    func configureCell(indexPath:Int) {
+        currentEmployee = possibleEmployees[indexPath]
+        nameLabel.text = currentEmployee.name
+        efficiencyColorChange(currentEmployee.efficiency)
+        efficiencyLabel.text = "Efficiency: \(currentEmployee.efficiency*100)% "
         costLabel.textColor = UIColor.redColor()
-        costLabel.text = "Cost: $\(employee.salary)/sec"
+        costLabel.text = "Cost: $\(currentEmployee.salary)/sec"
         profitLabel.textColor = UIColor.greenColor()
-        profitLabel.text = "Profit: $\(employee.efficiency * 10)/sec (HTML)"
-        randomLabel.text = employee.catchPhrase
-        profit = employee.efficiency * 10 - employee.salary
+        profitLabel.text = "Profit: $\(currentEmployee.efficiency * 10)/sec (HTML)"
+        randomLabel.text = currentEmployee.catchPhrase
+        profit = currentEmployee.efficiency * 10 - currentEmployee.salary
     }
     
     @IBAction func hireEmployee(sender: UIButton) {

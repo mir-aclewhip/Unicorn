@@ -8,6 +8,8 @@
 
 import UIKit
 
+var possibleEmployees:[Employee] = []
+
 class RecruitTableViewCell: UITableViewCell {
     
     @IBOutlet var nameLabel: UILabel!
@@ -17,7 +19,6 @@ class RecruitTableViewCell: UITableViewCell {
     @IBOutlet var button:UIButton!
     @IBOutlet var profitLabel:UILabel!
     
-    var possibleEmployees:[Employee] = []
     var totalEmployees:Int = 5
     var currentEmployee:Employee!
     var profit:Double!

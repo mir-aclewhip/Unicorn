@@ -16,22 +16,40 @@ class EmployeesTableViewCell: UITableViewCell {
     @IBOutlet var randomLabel: UILabel!
     @IBOutlet var profitLabel:UILabel!
     
+    var codingLanguages:[String] = ["HTML & CSS", "JScript", "MySQL", "Terminal", "PHP", "Ruby", "Python", "R", "Perl", "Java", "C#", "Pascal", "C", "Obj-C", "Fortran", "C++", "Haskell", "Assembly", "Prolog", "LISP", "Brainfuck"]
+    var languageKnowledge = [String:Int]()
     var profit:Int!
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        for index in 0...codingLanguages.count-1 {
+            languageKnowledge[codingLanguages[index]] = (10*index + index/2 + 2)
+        }
         
     }
 
     func configureCell(employee:Employee) {
+        
         nameLabel.text = employee.name
         efficiencyLabel.text = "Efficiency: \(employee.efficiency*100)% "
+        
         costLabel.textColor = UIColor.redColor()
         costLabel.text = "Cost: $\(employee.salary)/sec"
+        
         profitLabel.textColor = UIColor.greenColor()
-        profitLabel.text = "Profit: $\(employee.efficiency * 10)/sec (HTML)"
+
         randomLabel.text = employee.catchPhrase
-        profit = Int(employee.efficiency)*10 - Int(employee.salary)
+        
+        if currentCodingLanguage != "" {
+            let increase = languageKnowledge[currentCodingLanguage]!
+            profit = Int(employee.efficiency) * increase - Int(employee.salary)
+            profitLabel.text = "Profit: $\(employee.efficiency * Double(increase))/sec (\(currentCodingLanguage))"
+
+        } else {
+            profitLabel.text = "Profit: $0/sec - Learn a Language!"
+            profit = 0
+        }
+        
     }
 
 }

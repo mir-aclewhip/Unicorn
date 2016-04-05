@@ -19,7 +19,7 @@ class RecruitTableVC: UITableViewController {
         self.navigationController?.navigationBarHidden = false
         let currNumEmployees = Employees.count
         self.title = "Employees \(currNumEmployees)/\(totalNumEmployees)"
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Refresh", style: .Plain, target: self, action: "refreshRecruits")
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Refresh, target: self, action: "refreshRecruits")
     }
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -66,6 +66,7 @@ class RecruitTableVC: UITableViewController {
                 
                 //Decrememnt number of rows and delete row at index path
                 possibleEmployee--
+                possibleEmployees.removeAtIndex(button.tag)
                 tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
                 self.tableView.reloadData()
                 
@@ -75,8 +76,9 @@ class RecruitTableVC: UITableViewController {
     }
     
     @IBAction func refreshRecruits() {
+        possibleEmployee = 5
         possibleEmployees = []
-        for _ in 1...possibleEmployee {
+        for _ in 1...5 {
             let employee = Employee()
             possibleEmployees.append(employee)
         }

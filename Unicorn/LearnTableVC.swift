@@ -10,6 +10,7 @@ import UIKit
 
 var isActive:[Bool] = []
 
+
 class LearnTableVC: UITableViewController {
     
     var codingLanguages:[String] = ["HTML & CSS", "JScript", "MySQL", "Terminal", "PHP", "Ruby", "Python", "R", "Perl", "Java", "C#", "Pascal", "C", "Obj-C", "Fortran", "C++", "Haskell", "Assembly", "Prolog", "LISP", "Brainfuck"]
@@ -55,6 +56,7 @@ class LearnTableVC: UITableViewController {
         if let cell = tableView.dequeueReusableCellWithIdentifier("CodingLanguages") as? CodingTableViewCell {
             cell.configureCell(codingLanguages[indexPath.row], required: required[indexPath.row], gained: gained[indexPath.row], uses:codingUses[indexPath.row], profit: averageProfit[indexPath.row], onOrNah:isActive[indexPath.row])
             cell.select.tag = indexPath.row
+
             return cell
         } else {
             return CodingTableViewCell()

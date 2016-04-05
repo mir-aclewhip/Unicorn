@@ -8,6 +8,8 @@
 
 import UIKit
 
+var currentCodingLanguage:String = ""
+
 class CodingTableViewCell: UITableViewCell {
     
     @IBOutlet weak var title:UILabel!
@@ -20,7 +22,7 @@ class CodingTableViewCell: UITableViewCell {
     var requirement:Int!
     var averageProfit:Int!
     var gainedKnowledge:Int!
-    
+    var codingLanguage:String!
 
 
     override func awakeFromNib() {
@@ -57,6 +59,7 @@ class CodingTableViewCell: UITableViewCell {
         averageProfit = profit
         requirement = required
         gainedKnowledge = gained
+        codingLanguage = title
         
     }
     
@@ -68,16 +71,8 @@ class CodingTableViewCell: UITableViewCell {
             isActive[select.tag] = false
             updateLearnedSkillLabel()
             knowledge -= requirement
+            currentCodingLanguage = codingLanguage
         }
-
-        
-//        if knowledge >= requirement {
-//            requiredLabel.textColor = UIColor.greenColor()
-//            requiredLabel.text = "Learned!"
-//        } else {
-//            requiredLabel.textColor = UIColor.redColor()
-//            requiredLabel.text = "Required: \(requirement) knowledge"
-//        }
     }
     
     func updateLearnedSkillLabel() {

@@ -8,7 +8,7 @@
 
 import UIKit
 
-var knowledge:Int = 100
+var knowledge:Int = 10000
 var totalKnowledgeIncrease:Int = 0
 var money:Int = 100
 var totalMoneyIncrease:Int = 0
@@ -69,7 +69,8 @@ class FirstViewController: UIViewController {
         if money <= 1000 {
             moneyLabel.text = "\(money)"
         } else if money > 1000 {
-            moneyLabel.text = "\(money/1000)k"
+            let total:Double = Double(money)
+            moneyLabel.text = "\(total/1000)k"
         }
         
         if totalMoney < 1000 {

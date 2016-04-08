@@ -38,6 +38,13 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
         for index in 1...locations.count {
             locationCost.append(index*index*1250)
         }
+        
+        NSNotificationCenter.defaultCenter().addObserver(
+            self,
+            selector: "refresh",
+            name: "reloadTableView",
+            object: nil)
+        
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -63,7 +70,11 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCellWithIdentifier("Employees") as? EmployeesTableViewCell {
             cell.configureCell(Employees[indexPath.row])
-            //totalMoneyIncrease += Int(cell.profit)
+            
+            cell.fireButton.tag = indexPath.row
+            let tapGesture = UITapGestureRecognizer(target: self, action: Selector("fireEmployee:"))
+            cell.fireButton.addGestureRecognizer(tapGesture)
+
             return cell
         } else {
             return EmployeesTableViewCell()
@@ -87,6 +98,35 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
             titleLabel.text = "Employees \(currNumEmployees)/\(totalNumEmployees)"
         }
 
+    }
+    
+    func fireEmployee(sender: UITapGestureRecognizer)
+    {
+        if let button = sender.view as? UIButton
+        {
+                
+                //Find current cell and add it to Employees
+                let indexPath = NSIndexPath(forRow: button.tag, inSection: 0)
+                let cell = tableView.cellForRowAtIndexPath(indexPath) as? EmployeesTableViewCell
+
+                Employees.removeAtIndex(button.tag)
+                
+                totalMoneyIncrease -= (cell?.profit)!
+                
+                //Update Title
+
+                self.title = "Employees \(Employees.count)/\(totalNumEmployees)"
+                
+                //Decrememnt number of rows and delete row at index path
+                possibleEmployees.removeAtIndex(button.tag)
+                tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+                self.tableView.reloadData()
+
+        }
+    }
+    
+    func refresh() {
+        self.tableView.reloadData()
     }
 
 }

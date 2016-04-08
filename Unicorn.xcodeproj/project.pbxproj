@@ -16,6 +16,7 @@
 		E90059A81CADFFF6009EB42F /* CodingLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90059A71CADFFF5009EB42F /* CodingLanguage.swift */; };
 		E90059AA1CAE0061009EB42F /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90059A91CAE0061009EB42F /* Employee.swift */; };
 		E90059AC1CAEFAB8009EB42F /* EmployeesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90059AB1CAEFAB7009EB42F /* EmployeesTableViewCell.swift */; };
+		E90059B01CB4CC85009EB42F /* MissionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90059AF1CB4CC85009EB42F /* MissionTableViewCell.swift */; };
 		E999A1F61CA4CA6600BF3647 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E999A1F51CA4CA6600BF3647 /* AppDelegate.swift */; };
 		E999A1F81CA4CA6600BF3647 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E999A1F71CA4CA6600BF3647 /* FirstViewController.swift */; };
 		E999A1FA1CA4CA6600BF3647 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E999A1F91CA4CA6600BF3647 /* SecondViewController.swift */; };
@@ -53,6 +54,7 @@
 		E90059A71CADFFF5009EB42F /* CodingLanguage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodingLanguage.swift; sourceTree = "<group>"; };
 		E90059A91CAE0061009EB42F /* Employee.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
 		E90059AB1CAEFAB7009EB42F /* EmployeesTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmployeesTableViewCell.swift; sourceTree = "<group>"; };
+		E90059AF1CB4CC85009EB42F /* MissionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MissionTableViewCell.swift; sourceTree = "<group>"; };
 		E999A1F21CA4CA6500BF3647 /* Unicorn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Unicorn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E999A1F51CA4CA6600BF3647 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E999A1F71CA4CA6600BF3647 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 				E90059AB1CAEFAB7009EB42F /* EmployeesTableViewCell.swift */,
 				E90059A31CADD3E5009EB42F /* RecruitTableViewCell.swift */,
 				E90059A51CADD3F2009EB42F /* HackTableViewCell.swift */,
+				E90059AF1CB4CC85009EB42F /* MissionTableViewCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -325,6 +328,7 @@
 				E90059A21CADD3CF009EB42F /* HackTableVC.swift in Sources */,
 				E90059A41CADD3E5009EB42F /* RecruitTableViewCell.swift in Sources */,
 				E999A1F81CA4CA6600BF3647 /* FirstViewController.swift in Sources */,
+				E90059B01CB4CC85009EB42F /* MissionTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

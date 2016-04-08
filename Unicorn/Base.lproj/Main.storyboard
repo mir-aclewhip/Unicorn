@@ -488,9 +488,9 @@
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Speed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dKQ-g1-BHe">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="z" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dKQ-g1-BHe">
                                             <rect key="frame" x="550" y="7" width="42" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -659,7 +659,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Cost :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eqX-VV-r2O">
                                         <rect key="frame" x="517" y="0.0" width="75" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wdu-kl-1U4">
@@ -730,14 +730,20 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Cm-Wq-Gds">
+                                                    <rect key="frame" x="546" y="52" width="46" height="30"/>
+                                                    <state key="normal" title="Fire"/>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="uxy-36-sLX" firstAttribute="leading" secondItem="gIA-ye-auO" secondAttribute="leadingMargin" id="EuC-6u-ejg"/>
                                                 <constraint firstItem="25f-3E-uyk" firstAttribute="top" secondItem="gIA-ye-auO" secondAttribute="topMargin" id="JA9-vf-RUZ"/>
+                                                <constraint firstItem="1Cm-Wq-Gds" firstAttribute="trailing" secondItem="gIA-ye-auO" secondAttribute="trailingMargin" id="K7V-O8-aUL"/>
                                                 <constraint firstItem="25f-3E-uyk" firstAttribute="trailing" secondItem="gIA-ye-auO" secondAttribute="trailingMargin" id="K8P-Oy-pTy"/>
                                                 <constraint firstItem="xuz-lO-OLI" firstAttribute="leading" secondItem="gIA-ye-auO" secondAttribute="leadingMargin" id="Nwc-48-PZ4"/>
                                                 <constraint firstItem="qCn-F3-Fbo" firstAttribute="leading" secondItem="gIA-ye-auO" secondAttribute="leadingMargin" id="V9B-TU-Apw"/>
                                                 <constraint firstItem="v6h-Cc-V1N" firstAttribute="leading" secondItem="gIA-ye-auO" secondAttribute="leadingMargin" id="bxe-We-Kfs"/>
+                                                <constraint firstItem="1Cm-Wq-Gds" firstAttribute="centerY" secondItem="gIA-ye-auO" secondAttribute="centerY" id="c9J-LA-Aob"/>
                                                 <constraint firstItem="xuz-lO-OLI" firstAttribute="top" secondItem="qCn-F3-Fbo" secondAttribute="bottom" constant="8" id="dJx-bj-Pez"/>
                                                 <constraint firstItem="v6h-Cc-V1N" firstAttribute="top" secondItem="xuz-lO-OLI" secondAttribute="bottom" constant="8" id="jRd-QM-8A8"/>
                                                 <constraint firstItem="uxy-36-sLX" firstAttribute="top" secondItem="v6h-Cc-V1N" secondAttribute="bottom" constant="8" id="k0L-R1-wKN"/>
@@ -748,6 +754,7 @@
                                         <connections>
                                             <outlet property="costLabel" destination="25f-3E-uyk" id="Zip-xZ-iVB"/>
                                             <outlet property="efficiencyLabel" destination="xuz-lO-OLI" id="Ygz-bq-w5D"/>
+                                            <outlet property="fireButton" destination="1Cm-Wq-Gds" id="0bp-xc-s5N"/>
                                             <outlet property="nameLabel" destination="qCn-F3-Fbo" id="yeh-Cb-MZd"/>
                                             <outlet property="profitLabel" destination="v6h-Cc-V1N" id="C2K-TD-ic6"/>
                                             <outlet property="randomLabel" destination="uxy-36-sLX" id="4nX-6V-OT5"/>

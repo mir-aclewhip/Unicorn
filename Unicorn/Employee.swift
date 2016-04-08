@@ -39,6 +39,7 @@ class Employee {
     var efficiency:Double!
     var min:Int = 10
     var max:Int = 75
+    var profit:Int!
     //var currentCodingLanguage:CodingLanguage!
     
     init() {

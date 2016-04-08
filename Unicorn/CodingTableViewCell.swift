@@ -23,11 +23,17 @@ class CodingTableViewCell: UITableViewCell {
     var averageProfit:Int!
     var gainedKnowledge:Int!
     var codingLanguage:String!
+    
+    var codingLanguages:[String] = ["HTML & CSS", "JScript", "MySQL", "Terminal", "PHP", "Ruby", "Python", "R", "Perl", "Java", "C#", "Pascal", "C", "Obj-C", "Fortran", "C++", "Haskell", "Assembly", "Prolog", "LISP", "Brainfuck"]
+    var languageKnowledge = [String:Int]()
 
 
     override func awakeFromNib() {
         super.awakeFromNib()
         select.layer.cornerRadius = 5.0
+        for index in 1...codingLanguages.count {
+            languageKnowledge[codingLanguages[index-1]] = (10*index + index/2)
+        }
     }
     
     func configureCell(title:String, required:Int, gained:Int, uses:String, profit:Int, onOrNah:Bool) {
@@ -65,6 +71,7 @@ class CodingTableViewCell: UITableViewCell {
     
     
     @IBAction func learnLanguage(sender: UIButton) {
+        NSNotificationCenter.defaultCenter().postNotificationName("reloadTableView", object: self)
         if knowledge >= requirement {
             totalKnowledgeIncrease += gainedKnowledge
             select.hidden = true
@@ -72,6 +79,20 @@ class CodingTableViewCell: UITableViewCell {
             updateLearnedSkillLabel()
             knowledge -= requirement
             currentCodingLanguage = codingLanguage
+            
+            totalMoneyIncrease = 0
+            if Employees.count > 0 {
+                let increase = Double(languageKnowledge[currentCodingLanguage]!)
+                //employee.profit = profit
+                for index in 0...Employees.count-1 {
+                    Employees[index].profit = Int(Employees[index].efficiency * increase - Employees[index].salary)
+                    totalMoneyIncrease += Employees[index].profit
+                    print(Employees[index].profit)
+                    print(totalMoneyIncrease)
+                }
+            }
+
+            
         }
     }
     

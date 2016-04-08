@@ -9,6 +9,8 @@
 import UIKit
 
 class HackTableVC: UITableViewController {
+    
+    var data = [[],[]]
 
     override func viewDidLoad() {
         super.viewDidLoad()

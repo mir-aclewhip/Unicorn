@@ -13,6 +13,8 @@ import UIKit
 class RecruitTableVC: UITableViewController {
     
     var possibleEmployee:Int = 5
+    var canRefresh:Bool = true
+    var timer = NSTimer()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -76,13 +78,22 @@ class RecruitTableVC: UITableViewController {
     }
     
     @IBAction func refreshRecruits() {
-        possibleEmployee = 5
-        possibleEmployees = []
-        for _ in 1...5 {
-            let employee = Employee()
-            possibleEmployees.append(employee)
+        if canRefresh == true {
+            canRefresh = false
+            timer = NSTimer.scheduledTimerWithTimeInterval(30.0, target: self, selector: "refreshTimer", userInfo: nil, repeats: true)
+            possibleEmployee = 5
+            possibleEmployees = []
+            for _ in 1...5 {
+                let employee = Employee()
+                possibleEmployees.append(employee)
+            }
+            self.tableView.reloadData()
         }
-        self.tableView.reloadData()
+
+    }
+    
+    func refreshTimer() {
+        canRefresh = true
     }
 
 }

@@ -10,7 +10,7 @@ import UIKit
 
 var knowledge:Int = 10000
 var totalKnowledgeIncrease:Int = 0
-var money:Int = 100
+var money:Int = 10000
 var totalMoneyIncrease:Int = 0
 
 class FirstViewController: UIViewController {
